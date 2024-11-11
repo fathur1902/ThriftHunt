@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/signup.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-5" href="#">
+                <img src="Logo.png" alt="Logo" width="50" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-4"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="#">Produk</a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Signup -->
+    <!----------------------- Main Container -------------------------->
+
+     <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+    <!----------------------- Signup Container -------------------------->
+
+       <div class="row border rounded-5 p-3 bg-white shadow box-area">
+
+    <!--------------------------- Left Box ----------------------------->
+
+       <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
+           <div class="featured-image mb-3">
+            <img src="Signup.png" class="img-fluid" style="width: 950px;">
+           </div>
+        </div> 
+
+    <!-------------------- ------ Right Box ---------------------------->
+        
+       <div class="col-md-6 right-box">
+          <div class="row align-items-center">
+                <div class="header-text mb-2">
+                     <h2>Daftar</h2>
+                </div>
+                <small>Nama Lengkap</small>
+                <div class="input-group mb-3">
+                    <input id="nama" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Nama lengkap">
+                </div>
+                <small>Email</small>
+                <div class="input-group mb-3">
+                    <input id="email" type="email" class="form-control form-control-lg bg-light fs-6" placeholder="Alamat email">
+                </div>
+                <small>Sandi</small>
+                <div class="input-group mb-3">
+                    <input id="password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Buat sandi">
+                </div>
+                <small>Konfirmasi Sandi</small>
+                <div class="input-group mb-3">
+                    <input id="password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Konfirmasi Sandi">
+                </div>
+                <div class="input-group mb-3 d-flex justify-content-between">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="formCheck">
+                        <label for="formCheck" class="form-check-label text-secondary"><small>Saya telah membaca Ketentuan Layanan dan Kebijakan Privasi</small></label>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <button onclick="validateDaftar()"  class="btn btn-lg btn-primary w-100 fs-6">Daftar</button>
+                </div>
+                <div class="input-group mb-3">
+                    <button class="btn btn-lg btn-light w-100 fs-6"><img src="Google.png" style="width:20px" class="me-2"><small>Daftar mengunakan google</small></button>
+                </div>
+                <div class="row">
+                    <small>Sudah punya akun? <a href="login.html">Masuk aja</a></small>
+                </div>
+          </div>
+       </div> 
+      </div>
+    </div>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function validateDaftar() {
+        // Ambil nilai dari input email dan password
+        const nama = document.getElementById("nama").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Validasi apakah email dan password telah diisi
+        if (!nama || !email || !password) {
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Mohon isi nama, email dan sandi Anda."
+            });
+        } else {
+            Swal.fire({
+                title: "Good job!",
+                text: "Anda berhasil daftar!",
+                icon: "success"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "login.html"; // Ganti dengan halaman yang diinginkan
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>

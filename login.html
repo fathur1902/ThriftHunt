@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/assets/css/login.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-5" href="#">
+                <img src="Logo.png" alt="Logo" width="50" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item me-4"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="#">Produk</a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
+                    <li class="nav-item me-4"><a class="nav-link" href="#"><i class="bi bi-person"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row border rounded-5 p-3 bg-white shadow box-area">
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
+                <div class="featured-image mb-3">
+                    <img src="Login.png" class="img-fluid" style="width: 550px;">
+                </div>
+            </div> 
+
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                    <div class="header-text mb-2">
+                        <h2>Masuk</h2>
+                    </div>
+                    <small>Masukan email</small>
+                    <div class="input-group mb-3">
+                        <input type="text" id="email" class="form-control form-control-lg bg-light fs-6" placeholder="Alamat email">
+                    </div>
+                    <small>Masukan sandi</small>
+                    <div class="input-group mb-1">
+                        <input type="password" id="password" class="form-control form-control-lg bg-light fs-6" placeholder="Sandi">
+                    </div>
+                    <div class="input-group mb-3 d-flex justify-content-between">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="formCheck">
+                            <label for="formCheck" class="form-check-label text-secondary"><small>Ingat saya</small></label>
+                        </div>
+                        <div class="forgot">
+                            <small><a href="#">Lupa sandi?</a></small>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button onclick="validateLogin()" class="btn btn-lg btn-primary w-100 fs-6">Masuk</button>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-lg btn-light w-100 fs-6"><img src="Google.png" style="width:20px" class="me-2"><small>Masuk mengunakan google</small></button>
+                    </div>
+                    <div class="row">
+                        <small>Belum memiliki akun? <a href="signup.html">Buat akun</a></small>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function validateLogin() {
+            // Ambil nilai dari input email dan password
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Validasi apakah email dan password telah diisi
+            if (!email || !password) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Mohon isi email dan sandi Anda."
+                });
+            } else {
+                Swal.fire({
+                    title: "Good job!",
+                    text: "Anda berhasil login!",
+                    icon: "success"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "#"; // Ganti dengan halaman yang diinginkan
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
