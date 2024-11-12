@@ -36,26 +36,10 @@ header {
 
 
 .navbar {
-    background: radial-gradient(circle at 20% 40%, #332587, #2B297F, #114F87);
+    background: linear-gradient(90deg, #115087, #352588, #352588);
     padding: 1rem;
     border-bottom: none;
     box-shadow: none;
-}
-
-.navbar .form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: #fff;
-    width: 350px;
-    height: 30px;
-    border-radius: 20px;
-    padding: 0 10px;
-    box-shadow: 0 0 0 2px transparent, 0 0 0 2px linear-gradient(90deg, #1895E4, #3864DA, #5E3ED7);
-}
-
-.navbar .form-control :focus {
-    box-shadow: 0 0 0 2px transparent,
-        0 0 0 2px linear-gradient(90deg, #1895E4, #3864DA, #5E3ED7);
 }
 
 .navbar .nav-link {
@@ -63,33 +47,40 @@ header {
 }
 
 /*------------ Login container ------------*/
-.box-area{
+.box-area {
     width: 930px;
 }
+
 /*------------ Right box ------------*/
-.right-box{
+.right-box {
     padding: 40px 30px 40px 40px;
 }
+
 /*------------ Custom Placeholder ------------*/
-::placeholder{
+::placeholder {
     font-size: 0.8rem;
 }
-.rounded-4{
+
+.rounded-4 {
     border-radius: 20px;
 }
-.rounded-5{
+
+.rounded-5 {
     border-radius: 30px;
 }
+
 /*------------ For small screens------------*/
-@media only screen and (max-width: 768px){
-     .box-area{
+@media only screen and (max-width: 768px) {
+    .box-area {
         margin: 0 10px;
-     }
-     .left-box{
+    }
+
+    .left-box {
         height: 100px;
         overflow: hidden;
-     }
-     .right-box{
+    }
+
+    .right-box {
         padding: 20px;
-     }
+    }
 }

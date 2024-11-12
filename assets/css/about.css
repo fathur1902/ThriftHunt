@@ -23,7 +23,6 @@ body {
     background: radial-gradient(circle at 20% 40%, #0b3b62, #0a234a, #05162b);
     color: #FFF;
     line-height: 1.6;
-    height: 100vh;
 }
 
 header {
@@ -34,15 +33,17 @@ header {
 }
 
 .navbar {
-    background: radial-gradient(circle at 20% 40%, #332587, #2B297F, #114F87);
+    background: linear-gradient(90deg, #115087, #352588, #352588);
     padding: 1rem;
     border-bottom: none;
     box-shadow: none;
 }
 
 .navbar .form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    z-index: 1;
+    position: relative;
+    border: 2px solid;
     color: #fff;
     width: 350px;
     height: 30px;
@@ -51,7 +52,10 @@ header {
     box-shadow: 0 0 0 2px transparent, 0 0 0 2px linear-gradient(90deg, #1895E4, #3864DA, #5E3ED7);
 }
 
+
 .navbar .form-control :focus {
+    outline: none;
+    border-color: transparent;
     box-shadow: 0 0 0 2px transparent,
         0 0 0 2px linear-gradient(90deg, #1895E4, #3864DA, #5E3ED7);
 }
@@ -60,62 +64,152 @@ header {
     color: var(--text-color);
 }
 
-.tentang{
-    background: #ffffff;
-    background: fixed;
-    border-radius: 10px;
+.search-input {
+    padding-right: 20px;
+    color: #fff;
+    background-color: transparent;
 }
 
+.search-input ::placeholder {
+    color: #fff;
+}
+
+.search-icon {
+    position: absolute;
+    top: 15%;
+    right: 35px;
+    color: var(--text-color);
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.tentang {
+    background-color: var(--text-color);
+    padding: 0;
+    margin-top: 100px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul Utama Section */
 .section-title {
     font-size: 2rem;
-    margin-top: 120px;
-    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
+/* Sub Judul Tentang Kami */
 .section-tentang {
-    margin-top: -20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #121212;
+    margin-top: 5px;
 }
 
-.bi{
+.deskripsi-tentang {
+    font-size: 1rem;
+    color: #121212;
+    margin-top: 10px;
+}
+
+.bi {
     margin-left: 5px;
 }
 
 .about-text {
-    font-size: 1.2rem;
-    margin-bottom: 110px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 40px;
 }
+
 .about-image {
     width: 100%;
     height: auto;
-    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Info Kontak */
 .contact-info {
     background: #ffffff;
-    padding: 10px;
-    color: black;
-    border-radius: 10px;
-    height: 120px;
-    margin-bottom: 20px;
+    padding: 15px;
+    color: #333;
+    border-radius: 15px;
+    height: 130px;
+    margin-bottom: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 .contact-info h6 {
-    margin-bottom: 7px;
-    margin-top: 6px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
+
 .contact-info p {
     margin: 0;
+    font-size: 0.9rem;
+    color: #666;
 }
-.contact-form input, .contact-form textarea {
-    margin-bottom: 10px;
+
+/* Form Kontak */
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.9rem;
+    width: 100%;
+    color: #333;
 }
-.contact-form button {
-    margin-bottom: 50px;
+
+.contact-form textarea {
+    resize: vertical;
+    height: 100px;
 }
+
+.btn-tentang-custom {
+    background: none;
+    color: #121212;
+    margin-left: -13px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 0;
+    text-decoration: underline;
+    margin-bottom: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-tentang-custom :hover {
+    color: var(--btn-hover-color-start) !important;
+    text-decoration: none;
+}
+
+.btn-kirim {
+    background: linear-gradient(90deg, var(--button-color-start), var(--button-color-end));
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-bottom: 25px;
+}
+
+.btn-kirim :hover {
+    background: linear-gradient(90deg, var(--button-color-end), var(--button-color-start));
+}
+
 .map {
     border-radius: 20px;
     overflow: hidden;
     height: 300px;
     margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .footer-section {
     background: linear-gradient(90deg, #115087, #352588);
@@ -137,7 +231,7 @@ header {
 }
 
 .footer-icon {
-    color:var(--text-color);
+    color: var(--text-color);
     font-size: 1.5rem;
     margin: 0 10px;
     text-decoration: none;

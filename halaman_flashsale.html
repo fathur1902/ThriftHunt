@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThriftHunt | Flash Sale</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/flashsale.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand me-5" href="index.html">
+                    <img src="/assets/img/Logo.png
+                    
+                    " alt="Logo" width="50" height="30">
+                </a>
+                <form class="d-flex flex-wrap mx-5 position-relative" role="search">
+                    <input type="search" class="form-control search-input me-4" placeholder="mencari..."
+                        aria-label="Search">
+                    <span class="search-icon">
+                        <i class="bi bi-search"></i>
+                    </span>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item me-4"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="halaman_KPK.html">Produk</a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="#">Dashboard</a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="profile.html"><i
+                                    class="bi bi-person"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <!-- Header Section -->
+        <section class="tittle mb-4">
+            <h2>Koleksi Produk Kami</h2>
+        </section>
+
+        <!-- Flash Sale Timer Section -->
+        <section class="flash-sale-timer d-flex justify-content-end mb-4">
+            <button class="btn btn-primary mx-2" id="countdown1">00:00 <br> Sedang Berjalan</button>
+            <button class="btn btn-primary mx-2" id="countdown2">00:00 <br> Akan Datang</button>
+            <button class="btn btn-primary mx-2" id="countdown3">00:00 <br> Besok</button>
+        </section>
+
+        <div class="row">
+            <!-- Sidebar Section -->
+            <section class="col-12 col-md-3">
+                <div class="list-group-container mb-3">
+                    <h5 class="list-group-item">Kategori</h5>
+                    <a href="halaman_AP.html" class="list-group-item list-group-item-action">Atasan Pria</a>
+                    <a href="halaman_BP.html" class="list-group-item list-group-item-action">Bawahan Pria</a>
+                    <a href="halaman_AW.html" class="list-group-item list-group-item-action">Atasan Wanita</a>
+                    <a href="halaman_BW.html" class="list-group-item list-group-item-action">Bawahan Wanita</a>
+                    <a href="halaman_KA.html" class="list-group-item list-group-item-action">Aksesoris</a>
+                    <a href="halaman_flashsale.html" class="list-group-item list-group-item-action">Flash Sale</a>
+                </div>
+                <div class="list-group-container">
+                    <h5 class="list-group-item">Harga</h5>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="0-50000"> Rp. 0 - 50.000
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="50000-100000"> Rp. 50.000 - 100.000
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="100000-150000"> Rp. 100.000 - 150.000
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="150000-200000"> Rp. 150.000 - 200.000
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="200000-250000"> Rp. 200.000 - 250.000
+                    </label>
+                </div>
+            </section>
+
+            <!-- Product Grid Section -->
+            <section class="col-md-9">
+                <div class="row">
+                    <!-- Product Card Example -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <span class="badge badge-primary position-absolute">Tersisa 1</span>
+                            <img src="/assets/img/Jeans Levi’s 501 Vintage.jpg" class="card-img-top"
+                                alt="Product Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jeans Levi's 501 Vintage</h5>
+                                <p><small><s>Rp. 200.000</s></small> <span class="price">Rp. 100.000</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <span class="badge badge-primary position-absolute">Tersisa 1</span>
+                            <img src="/assets/img/Flanel Ralph Lauren2.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Flanel Ralph Lauren</h5>
+                                <p><small><s>Rp. 100.000</s></small> <span class="price">Rp. 50.000</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <span class="badge badge-primary position-absolute">Tersisa 1</span>
+                            <img src="/assets/img/Denim Wrangler 80s.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Denim Wrangler 80s</h5>
+                                <p><small><s>Rp. 300.000</s></small> <span class="price">Rp. 150.000</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <span class="badge badge-primary position-absolute">Tersisa 1</span>
+                            <img src="/assets/img/Tas Coach Signature.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Tas Coach Signature</h5>
+                                <p><small><s>Rp. 300.000</s></small> <span class="price">Rp. 100.000</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <span class="badge badge-primary position-absolute">Tersisa 1</span>
+                            <img src="/assets/img/Vans Checkerboard Classic.jpg" class="card-img-top"
+                                alt="Product Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Vans Checkerboard Classic</h5>
+                                <p><small><s>Rp. 500.000</s></small> <span class="price">Rp. 100.000</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <span class="badge badge-primary position-absolute">Tersisa 1</span>
+                            <img src="/assets/img/Kaos Band Metallica 90s.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Kaos Band Metallica 90s</h5>
+                                <p><small><s>Rp. 100.000</s></small> <span class="price">Rp. 50.000</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <img src="/assets/img/Logo.png" alt="Logo" class="footer-logo">
+                    <p class="footer-text">
+                        Jangan lewatkan penawaran menarik dan informasi terbaru! Daftarkan emailmu sekarang!
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="footer-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="footer-icon"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="footer-icon"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom text-center mt-3">
+                <p>copyright © 2024, group 3 - Ascending, Web Development & UI/UX Design.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/halaman_produk.js"></script>
+</body>
+
+</html>

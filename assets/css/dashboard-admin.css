@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Oxygen', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.sidebar {
+    background-color: #1a2a6c;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar .nav-link {
+    color: white;
+    margin: 10px 0;
+}
+
+.sidebar .nav-link.active {
+    background-color: white;
+    color: #1a2a6c;
+    border-radius: 10px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #3b5998;
+    color: white;
+    border-radius: 10px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-body h5 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.card-body p {
+    margin: 0;
+}
+
+.chart-container {
+    max-height: 400px;
+    /* Perbesar tinggi maksimum */
+    overflow-y: auto;
+    padding: 10px;
+    /* Kurangi padding untuk lebih banyak ruang */
+}
+
+#myChart {
+    width: 100%;
+    /* Gunakan seluruh lebar kontainer */
+    height: 400px;
+    /* Atur tinggi yang lebih besar */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    padding: 5px 20px;
+    width: 300px;
+}
+
+.search-bar .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar .user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.home-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}

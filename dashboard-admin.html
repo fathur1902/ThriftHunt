@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/dashboard-admin.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- Sidebar Section -->
+    <div class="d-flex">
+        <div class="sidebar">
+            <h2>THRIFT HUNT</h2>
+            <nav class="nav flex-column">
+                <a class="nav-link active" href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                <a class="nav-link" href="#"><i class="fas fa-chart-line"></i> Pendapatan ThriftHunt</a>
+                <a class="nav-link" href="#"><i class="fas fa-edit"></i> Edit Produk</a>
+                <a class="nav-link" href="#"><i class="fas fa-list"></i> List Penjual</a>
+                <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Pesan Masuk</a>
+            </nav>
+            <button class="home-button"><i class="fas fa-arrow-left"></i> Home</button>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content flex-grow-1">
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Mencari.." />
+                <div class="user-info">
+                    <img src="https://storage.googleapis.com/a1aa/image/MAYuSUVPcEqJJZ0WhpfTi4SEEabNGO6hXUQwfV9OlCvtoRwTA.jpg"
+                        alt="User profile picture" width="40" height="40" />
+                    <span>Admin Thrift Hunt</span>
+                </div>
+            </div>
+
+            <!-- Sales Summary Section -->
+            <h3>Ringkasan Penjualan</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>100+</h5>
+                            <p>Product Terjual</p>
+                            <i class="fas fa-shopping-cart"></i>
+                            <p class="text-success">+15%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>100Jt</h5>
+                            <p>Total Pendapatan</p>
+                            <i class="fas fa-chart-line"></i>
+                            <p class="text-success">+15%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>10+</h5>
+                            <p>Return</p>
+                            <i class="fas fa-sync-alt"></i>
+                            <p class="text-danger">5%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5>500k</h5>
+                            <p>Biaya Kirim</p>
+                            <i class="fas fa-truck"></i>
+                            <p class="text-success">+10%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monthly Income Chart Section -->
+            <div class="chart-container">
+                <h5>Ringkasan Penghasilan Bulanan</h5>
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts Section -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+3i5d5L5zzT5p4v4p5F5p5F5p5F5p" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Juni', 'Juli', 'Agust', 'Sep', 'Okt', 'Nov',
+                    'Des'
+                ],
+                datasets: [{
+                        label: 'Penurunan',
+                        data: [30, 20, 25, 35, 40, 30, 45, 20, 25, 35, 40, 30],
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        fill: true,
+                        tension: 0.4,
+                    },
+                    {
+                        label: 'Penaikan',
+                        data: [20, 30, 20, 25, 35, 40, 30, 45, 20, 25, 35, 40],
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        fill: true,
+                        tension: 0.4,
+                    },
+                ],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value) {
+                                return value + '%';
+                            },
+                        },
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
