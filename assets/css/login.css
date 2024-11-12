@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+:root {
+    --color-1: #2B297F;
+    --color-2: #114F87;
+    --color-3: #332587;
+    --button-color-start: #5041D2;
+    --button-color-end: #1798E5;
+    --text-color: #f4f6f9;
+    --navbar-bg-color: #332587;
+    --btn-hover-color-start: #2B297F;
+    --btn-hover-color-end: #f4f6f9;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxygen', sans-serif;
+}
+
+
+body {
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+
+.navbar {
+    background: linear-gradient(90deg, #115087, #352588, #352588);
+    padding: 1rem;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+}
+
+/*------------ Login container ------------*/
+.box-area {
+    width: 930px;
+}
+
+/*------------ Right box ------------*/
+.right-box {
+    padding: 40px 30px 40px 40px;
+}
+
+/*------------ Custom Placeholder ------------*/
+::placeholder {
+    font-size: 0.8rem;
+}
+
+.rounded-4 {
+    border-radius: 20px;
+}
+
+.rounded-5 {
+    border-radius: 30px;
+}
+
+/*------------ For small screens------------*/
+@media only screen and (max-width: 768px) {
+    .box-area {
+        margin: 0 10px;
+    }
+
+    .left-box {
+        height: 100px;
+        overflow: hidden;
+    }
+
+    .right-box {
+        padding: 20px;
+    }
+}
