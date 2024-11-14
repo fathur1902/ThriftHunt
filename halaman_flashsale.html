@@ -48,22 +48,22 @@
     </header>
     <div class="container mt-5">
         <!-- Header Section -->
-        <section class="tittle mb-4">
+        <section class="tittle mb-4 text-md-left">
             <h2>Koleksi Produk Kami</h2>
         </section>
 
         <!-- Flash Sale Timer Section -->
-        <section class="flash-sale-timer d-flex justify-content-end mb-4">
-            <button class="btn btn-primary mx-2" id="countdown1">00:00 <br> Sedang Berjalan</button>
-            <button class="btn btn-primary mx-2" id="countdown2">00:00 <br> Akan Datang</button>
-            <button class="btn btn-primary mx-2" id="countdown3">00:00 <br> Besok</button>
+        <section class="flash-sale-timer d-flex justify-content-end mb-4 flex-wrap">
+            <button class="btn btn-primary mx-2 mb-2" id="countdown1">00:00 <br> Sedang Berjalan</button>
+            <button class="btn btn-primary mx-2 mb-2" id="countdown2">00:00 <br> Akan Datang</button>
+            <button class="btn btn-primary mx-2 mb-2" id="countdown3">00:00 <br> Besok</button>
         </section>
 
         <div class="row">
             <!-- Sidebar Section -->
             <section class="col-12 col-md-3">
-                <div class="list-group-container mb-3">
-                    <h5 class="list-group-item">Kategori</h5>
+                <div class="list-group-container mx-md-0 mx-auto mb-3">
+                    <h5 class="list-group">| Kategori</h5>
                     <a href="halaman_AP.html" class="list-group-item list-group-item-action">Atasan Pria</a>
                     <a href="halaman_BP.html" class="list-group-item list-group-item-action">Bawahan Pria</a>
                     <a href="halaman_AW.html" class="list-group-item list-group-item-action">Atasan Wanita</a>
@@ -72,9 +72,9 @@
                     <a href="halaman_flashsale.html" class="list-group-item list-group-item-action">Flash Sale</a>
                 </div>
                 <div class="list-group-container">
-                    <h5 class="list-group-item">Harga</h5>
+                    <h5 class="list-group">| Harga</h5>
                     <label class="list-group-item list-group-item-action">
-                        <input type="checkbox" class="mr-2" value="0-50000"> Rp. 0 - 50.000
+                        <input type="checkbox" class="mr-2" value="20000-50000"> Rp. 20.000 - 50.000
                     </label>
                     <label class="list-group-item list-group-item-action">
                         <input type="checkbox" class="mr-2" value="50000-100000"> Rp. 50.000 - 100.000
@@ -85,24 +85,26 @@
                     <label class="list-group-item list-group-item-action">
                         <input type="checkbox" class="mr-2" value="150000-200000"> Rp. 150.000 - 200.000
                     </label>
-                    <label class="list-group-item list-group-item-action">
-                        <input type="checkbox" class="mr-2" value="200000-250000"> Rp. 200.000 - 250.000
-                    </label>
                 </div>
             </section>
 
             <!-- Product Grid Section -->
             <section class="col-md-9">
                 <div class="row">
-                    <!-- Product Card Example -->
                     <div class="col-md-4 mb-4">
                         <div class="card product-card">
                             <span class="badge badge-primary position-absolute">Tersisa 1</span>
                             <img src="/assets/img/Jeans Levi’s 501 Vintage.jpg" class="card-img-top"
                                 alt="Product Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Jeans Levi's 501 Vintage</h5>
-                                <p><small><s>Rp. 200.000</s></small> <span class="price">Rp. 100.000</span></p>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Jeans Levi's 501 Vintage</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 100.000</s></small>
+                                        <span class="price ms-2">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,9 +112,15 @@
                         <div class="card product-card">
                             <span class="badge badge-primary position-absolute">Tersisa 1</span>
                             <img src="/assets/img/Flanel Ralph Lauren2.jpg" class="card-img-top" alt="Product Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Flanel Ralph Lauren</h5>
-                                <p><small><s>Rp. 100.000</s></small> <span class="price">Rp. 50.000</span></p>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Flanel Ralph Lauren</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 100.000</s></small>
+                                        <span class="price">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -120,9 +128,15 @@
                         <div class="card product-card">
                             <span class="badge badge-primary position-absolute">Tersisa 1</span>
                             <img src="/assets/img/Denim Wrangler 80s.jpg" class="card-img-top" alt="Product Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Denim Wrangler 80s</h5>
-                                <p><small><s>Rp. 300.000</s></small> <span class="price">Rp. 150.000</span></p>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Denim Wrangler 80s</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 300.000</s></small> 
+                                        <span class="price">Rp. 150.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -130,9 +144,15 @@
                         <div class="card product-card">
                             <span class="badge badge-primary position-absolute">Tersisa 1</span>
                             <img src="/assets/img/Tas Coach Signature.jpg" class="card-img-top" alt="Product Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Tas Coach Signature</h5>
-                                <p><small><s>Rp. 300.000</s></small> <span class="price">Rp. 100.000</span></p>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Tas Coach Signature</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 300.000</s></small> 
+                                        <span class="price">Rp. 100.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -141,9 +161,15 @@
                             <span class="badge badge-primary position-absolute">Tersisa 1</span>
                             <img src="/assets/img/Vans Checkerboard Classic.jpg" class="card-img-top"
                                 alt="Product Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Vans Checkerboard Classic</h5>
-                                <p><small><s>Rp. 500.000</s></small> <span class="price">Rp. 100.000</span></p>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Vans Checkerboard Classic</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 500.000</s></small> 
+                                        <span class="price">Rp. 100.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,9 +177,15 @@
                         <div class="card product-card">
                             <span class="badge badge-primary position-absolute">Tersisa 1</span>
                             <img src="/assets/img/Kaos Band Metallica 90s.jpg" class="card-img-top" alt="Product Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Kaos Band Metallica 90s</h5>
-                                <p><small><s>Rp. 100.000</s></small> <span class="price">Rp. 50.000</span></p>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Kaos Band Metallica 90s</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 100.000</s></small> 
+                                        <span class="price">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
