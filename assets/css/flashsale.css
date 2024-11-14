@@ -93,26 +93,23 @@ header {
     align-items: flex-start;
     gap: 20px;
 }
+
 .tittle {
-    display: flex;
-    justify-content: flex-start;
     padding-left: 280px;
-    margin-bottom: 10px;
-    padding-bottom: 0;
     color: var(--text-color);
 }
 
 .flash-sale-timer .btn {
-    background: linear-gradient(90deg, #663CDA, #2A7ADF,#494BD4,#114F87);
+    background: linear-gradient(90deg, #663CDA, #2A7ADF, #494BD4, #114F87);
     color: var(--text-color);
     font-size: 1rem;
     border: 1px solid;
     padding: 15px 20px;
     border-radius: 8px;
-    width: 265px;  
-    height: 70px;  
-    display: inline-block;  
-    text-align: center; 
+    width: 265px;
+    height: 70px;
+    display: inline-block;
+    text-align: center;
     line-height: 1rem;
 }
 
@@ -128,9 +125,15 @@ header {
     top: -155px;
 }
 
+.list-group {
+    color: #f0f0f0;
+    font-size: 1.3rem;
+}
+
 .list-group-item {
     background-color: transparent;
     color: #f0f0f0;
+    font-size: 0.9rem;
     border: none;
     padding: 12px;
 }
@@ -152,7 +155,7 @@ header {
     top: 10px;
     left: 10px;
     background: linear-gradient(90deg, var(--button-color-start), var(--button-color-end));
-    font-size: 12px;
+    font-size: 0.7rem;
     padding: 5px 10px;
     border-radius: 10px;
 }
@@ -169,19 +172,19 @@ header {
 }
 
 .product-card .card-title {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.product-card p {
-    font-size: 14px;
+.product-card small {
+    font-size: 0.9rem;
     color: #928e8e;
 }
 
 .product-card .price {
     color: var(--text-color);
-    font-size: 16px;
+    font-size: 0.9rem;
 }
 
 .footer-section {

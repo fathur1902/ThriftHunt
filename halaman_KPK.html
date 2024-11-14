@@ -39,7 +39,9 @@
                         <li class="nav-item me-4"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item me-4"><a class="nav-link" href="halaman_KPK.html">Produk</a></li>
                         <li class="nav-item me-4"><a class="nav-link" href="#">Dashboard</a></li>
-                        <li class="nav-item me-4"><a class="nav-link" href="#"><i class="bi bi-cart"></i></a></li>
+                        <li class="nav-item me-4"><a class="nav-link" href="#"><i class="bi bi-cart"></i><span
+                                    id="cart-count" class="badge bg-danger"
+                                    style="position: absolute; top: 0; right: 0; font-size: 0.8rem;">0</span></a></li>
                         <li class="nav-item me-4"><a class="nav-link" href="profile.html"><i
                                     class="bi bi-person"></i></a>
                         </li>
@@ -49,451 +51,230 @@
         </nav>
     </header>
 
-    <div class="container-produk">
-        <div class="sidebar">
-            <div class="filter-section">
-                <h3>Kategori</h3>
-                <ul>
-                    <li><a href="halaman_AP.html" class="active">Atasan Pria</a></li>
-                    <li><a href="halaman_AW.html">Bawahan Pria</a></li>
-                    <li><a href="halaman_AW.html">Atasan Wanita</a></li>
-                    <li><a href="halaman_BW.html">Bawahan Wanita</a></li>
-                    <li><a href="halaman_KA.html">Aksesoris</a></li>
-                    <li><a href="halaman_flashsale.html" class="flash-sale">Flash Sale</a></li>
-                </ul>
-            </div>
-            <div class="filter-section">
-                <h3>Harga</h3>
-                <ul class="price-filter">
-                    <li><input type="checkbox" id="price1" class="price-checkbox"><label for="price1">Rp. 20.000 -
-                            50.000</label></li>
-                    <li><input type="checkbox" id="price2" class="price-checkbox"><label for="price2">Rp. 50.000 -
-                            100.000</label></li>
-                    <li><input type="checkbox" id="price3" class="price-checkbox"><label for="price3">Rp. 100.000 -
-                            150.000</label></li>
-                    <li><input type="checkbox" id="price4" class="price-checkbox"><label for="price4">Rp. 150.000 -
-                            200.000</label></li>
-                </ul>
-            </div>
-            <div class="filter-section">
-                <h3>Ukuran</h3>
-                <ul class="size-filter">
-                    <li><input type="checkbox" id="sizeS" class="size-checkbox"><label for="sizeS">S</label></li>
-                    <li><input type="checkbox" id="sizeM" class="size-checkbox"><label for="sizeM">M</label></li>
-                    <li><input type="checkbox" id="sizeL" class="size-checkbox"><label for="sizeL">L</label></li>
-                    <li><input type="checkbox" id="sizeXL" class="size-checkbox"><label for="sizeXL">XL</label></li>
-                    <li><input type="checkbox" id="sizeXXL" class="size-checkbox"><label for="sizeXXL">XXL</label></li>
-                </ul>
-            </div>
-        </div>
+    <div class="container mt-5">
+        <!-- Header Section -->
+        <section class="tittle mb-4 text-md-left">
+            <h2>Koleksi Produk Kami</h2>
+        </section>
+        <div class="row">
+            <!-- Sidebar Section -->
+            <section class="col-12 col-md-3">
+                <div class="list-group-container mx-md-0 mx-auto mb-3">
+                    <h5 class="list-group">| Kategori</h5>
+                    <a href="halaman_AP.html" class="list-group-item list-group-item-action">Atasan Pria</a>
+                    <a href="halaman_BP.html" class="list-group-item list-group-item-action">Bawahan Pria</a>
+                    <a href="halaman_AW.html" class="list-group-item list-group-item-action">Atasan Wanita</a>
+                    <a href="halaman_BW.html" class="list-group-item list-group-item-action">Bawahan Wanita</a>
+                    <a href="halaman_KA.html" class="list-group-item list-group-item-action">Aksesoris</a>
+                    <a href="halaman_flashsale.html" class="list-group-item list-group-item-action">Flash Sale</a>
+                </div>
+                <div class="list-group-container mb-3">
+                    <h5 class="list-group">| Harga</h5>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2 price-filter" value="20000-50000"> Rp. 20.000 - 50.000
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2 price-filter" value="50000-100000"> Rp. 50.000 - 100.000
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2 price-filter" value="100000-150000"> Rp. 100.000 - 150.000
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2 price-filter" value="150000-200000"> Rp. 150.000 - 200.000
+                    </label>
+                </div>
 
-        <div class="content">
-            <div class="content-header">
-                <h2>Koleksi Pakaian Kami</h2>
-            </div>
-            <div id="productGrid" class="product-grid">
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Dress 1.jpg" alt="Floral Summer Dress" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Dress</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
+                <div class="list-group-container mb-3">
+                    <h5 class="list-group">| Ukuran</h5>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="S"> S
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="M"> M
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="L"> L
+                    </label>
+                    <label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="XL"> XL
+                    </label><label class="list-group-item list-group-item-action">
+                        <input type="checkbox" class="mr-2" value="XXL"> XXL
+                    </label>
+                </div>
+            </section>
 
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/hodie.jpg" alt="Red Hoodie" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
+            <!-- Product Grid Section -->
+            <section class="col-md-9">
+                <div class="row">
+                    <!-- Product Card Example -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Celana Chino.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-auto text-start">Celana Chino</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price">Rp. 40.000</span>
+                                    <i class="bi bi-plus-circle add-to-cart" data-id="1" data-name="Celana Chino"
+                                        data-price="40000"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Hoodie</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Celana Jeans.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Celana Jeans</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 100.000</s></small>
+                                        <span class="price ms-2">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/sweater cewek.jpg" alt="Sweater" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Kaos Vneck Hitam.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Kaos Vneck Hitam</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 100.000</s></small>
+                                        <span class="price ms-2">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Sweater</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Rok  A-Line.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Rok A - Line</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 50.000</s></small>
+                                        <span class="price ms-2">Rp. 30.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/ransel denim (2).jpg" alt="Ransel Denim" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Celana Pendek.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-auto text-start">Celana Pendek</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price">Rp. 50.000</span>
+                                    <i class="bi bi-plus-circle"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Ransel Denim</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Celana Corduroy.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Celana Corduroy</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 100.000</s></small>
+                                        <span class="price ms-2">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Celana Jeans.jpg" alt="Celana Jeans" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Celana Drawstring.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-auto text-start">Celana Drawstring</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price">Rp. 50.000</span>
+                                    <i class="bi bi-plus-circle"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Celana Jeans</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/rok kotak.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Rok Mini</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 200.000</s></small>
+                                        <span class="price ms-2">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/jam Daniel Wellington.jpg" alt="Jam Daniel Wellington"
-                            class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Cardigan.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-auto text-start">Cardigan</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price">Rp. 50.000</span>
+                                    <i class="bi bi-plus-circle"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Jam Daniel W</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Crop Top.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-auto text-start">Crop Top</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                    <span class="price">Rp. 50.000</span>
+                                    <i class="bi bi-plus-circle"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Blouse3.jpg" alt="Blouse" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Celana Formal.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Celana Formal</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 100.000</s></small>
+                                        <span class="price ms-2">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Blouse</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
+                    <div class="col-md-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/assets/img/Blouse.jpg" class="card-img-top" alt="Product Image">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-start">Blouse</h5>
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div>
+                                        <small><s>Rp. 150.000</s></small>
+                                        <span class="price ms-2">Rp. 50.000</span>
+                                    </div>
+                                    <i class="bi bi-plus-circle fs-5"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Jaket Varsity.jpg" alt="Jaket Varsity" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Jaket Varsity</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Celana Corduroy.jpg" alt="Celana Corduroy" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Celana Corduroy</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Blouse.jpg" alt="Blouse" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Blouse</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Flanel Ralph Lauren.jpg" alt="Kemeja Flanel" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Kemeja Flanel</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/sepatu Truffle Boots.jpg" alt="Sepatu Truffle Boots"
-                            class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Sepatu Truffle Boots</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/kemeja putih.jpg" alt="Kemeja" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Kemeja</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/sarung tangan.jpg" alt="Sarung Tangan" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Sarung Tangan</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/hodie cewek.jpg" alt="Hoodie" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Hoodie</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/kemeja.jpg" alt="Kemeja" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Cardigan</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Crop Top.jpg" alt="Crop Top" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Crop Top</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Tas Coach Signature.jpg" alt="Tas Coach Signature" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Tas Coach Signature</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Celana Kargo.jpg" alt="Celana Kargo.jpg" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Celana Kargo.jpg</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Dress 2.jpg" alt="Dress" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Dress</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Sweater cowok.jpg" alt="Sweater" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Sweater</h3>
-                        <p class="product-size">Ukuran S </p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Kemeja Flanel cewek.jpg" alt="Kemeja Flanel" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Kemeja Flanel</h3>
-                        <p class="product-size">Ukuran S M L XL XXL</p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Rok  A-Line.jpg" alt="Rok A-Line" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Rok A-Line</h3>
-                        <p class="product-size">Ukuran S </p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/sepatu GSI Rossy.jpg" alt="Sepatu GSI Rossy" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Sepatu GSI Rossy</h3>
-                        <p class="product-size">Ukuran S </p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-                <article class="product-card">
-                    <div class="product-image-container">
-                        <img src="assets/img/Blouse 2.jpg" alt="Blouse" class="product-image" />
-                        <button class="wishlist-button" aria-label="Add to wishlist">
-                            <i class="far fa-heart"></i>
-                        </button>
-                    </div>
-                    <span class="new-badge">NEW IN</span>
-                    <div class="product-info">
-                        <h3 class="product-title">Blouse</h3>
-                        <p class="product-size">Ukuran S </p>
-                        <h5 class="product-price">Rp. 40.000</h5>
-                        <button class="quick-add-btn">Tambahkan ke Keranjang</button>
-                    </div>
-                </article>
-
-            </div>
+                </div>
+            </section>
         </div>
     </div>
 
@@ -517,10 +298,8 @@
             </div>
         </div>
     </footer>
-
-    <script src="assets/js/halaman_produk.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="/assets/js/halaman_produk.js"></script>
 </body>
 
 </html>

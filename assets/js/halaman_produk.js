@@ -1,120 +1,3 @@
-// window.onscroll = function () {
-//     stickyNavbar()
-// };
-
-// var navbar = document.querySelector(".navbar");
-// var sticky = navbar.offsetTop;
-
-// function stickyNavbar() {
-//     if (window.pageYOffset > sticky) {
-//         navbar.classList.add("sticky");
-//     } else {
-//         navbar.classList.remove("sticky");
-//     }
-// }
-
-// // Inisialisasi array untuk produk yang di-like dan elemen-elemen terkait
-// let likedProducts = [];
-// const notificationCount = document.querySelector('.notification-icon .notification-count');
-// const cartCount = document.querySelector('.cart-count');
-
-// // Fungsi untuk memperbarui jumlah notifikasi di ikon lonceng
-// function updateNotificationCount() {
-//     notificationCount.textContent = likedProducts.length;
-//     notificationCount.style.display = likedProducts.length > 0 ? 'block' : 'none';
-// }
-
-// // Fungsi untuk memperbarui jumlah item di keranjang
-// function updateCartCount() {
-//     // Memastikan bahwa cartCount dimulai dengan angka 0 jika belum ada
-//     cartCount.textContent = parseInt(cartCount.textContent) || 0;
-// }
-
-// // Inisialisasi jumlah keranjang
-// updateCartCount();
-
-// // Interaksi untuk tombol wishlist
-// document.querySelectorAll('.wishlist-button').forEach(button => {
-//     button.addEventListener('click', function () {
-//         const icon = this.querySelector('i');
-//         const productCard = button.closest('.product-card');
-//         const productTitle = productCard.querySelector('.product-title').textContent;
-
-//         // Toggle ikon dan status produk di wishlist
-//         if (likedProducts.includes(productTitle)) {
-//             likedProducts = likedProducts.filter(item => item !== productTitle);
-//             icon.classList.replace('fas', 'far'); // Ikon hati kosong
-//             icon.style.color = 'black'; // Kembalikan warna ke hitam jika tidak disukai
-//         } else {
-//             likedProducts.push(productTitle);
-//             icon.classList.replace('far', 'fas'); // Ikon hati penuh
-//             icon.style.color = 'red'; // Mengubah warna ikon menjadi merah jika disukai
-//         }
-
-//         // Update notifikasi wishlist
-//         updateNotificationCount();
-//     });
-// });
-
-// // Interaksi untuk tombol quick add to cart
-// document.querySelectorAll('.quick-add-btn').forEach(button => {
-//     button.addEventListener('click', function () {
-//         const originalText = this.textContent;
-
-//         // Ubah teks tombol dan warna latar belakang dengan gradien
-//         this.textContent = 'Telah Ditambahkan';
-//         this.style.background = 'linear-gradient(to right, #4e2482, #5d1cad, #2a57aa)';
-
-//         setTimeout(() => {
-//             this.textContent = originalText;
-//         }, 800);
-
-//         // Tambahkan item ke jumlah keranjang
-//         cartCount.textContent = parseInt(cartCount.textContent) + 1;
-//     });
-// });
-
-// // Inisialisasi tampilan awal notifikasi wishlist
-// updateNotificationCount();
-
-// // Fungsi untuk menyaring produk berdasarkan ukuran yang dipilih
-// function filterBySize() {
-//     const sizeFilters = document.querySelectorAll('.size-checkbox');
-//     const selectedSizes = [];
-
-//     // Cek checkbox yang dicentang
-//     sizeFilters.forEach(filter => {
-//         if (filter.checked) {
-//             selectedSizes.push(filter.id);
-//         }
-//     });
-
-//     const productCards = document.querySelectorAll('.product-card');
-//     productCards.forEach(card => {
-//         const productSizes = card.querySelector('.product-size').innerText.split(' ');
-//         const isMatch = selectedSizes.some(size => productSizes.includes(size));
-
-//         const productImage = card.querySelector('.product-image'); // Mengambil elemen gambar
-
-//         if (selectedSizes.length === 0 || isMatch) {
-//             card.style.display = 'block'; // Menampilkan produk yang sesuai
-//             if (productImage) {
-//                 productImage.style.display = 'block'; // Menampilkan gambar produk
-//             }
-//         } else {
-//             card.style.display = 'none'; // Menyembunyikan produk yang tidak sesuai
-//             if (productImage) {
-//                 productImage.style.display = 'none'; // Menyembunyikan gambar produk
-//             }
-//         }
-//     });
-// }
-
-// // Menambahkan event listener untuk perubahan pada checkbox ukuran
-// const sizeCheckboxes = document.querySelectorAll('.size-checkbox');
-// sizeCheckboxes.forEach(checkbox => {
-//     checkbox.addEventListener('change', filterBySize);
-// });
 function startCountdown(id, endTime) {
     const countdownElement = document.getElementById(id);
     const interval = setInterval(() => {
@@ -137,10 +20,132 @@ function startCountdown(id, endTime) {
     }
 }
 
-const countdown1Time = new Date().getTime() + 6 * 60 * 60 * 1000; 
-const countdown2Time = new Date().getTime() + 12 * 60 * 60 * 1000; 
-const countdown3Time = new Date().getTime() + 24 * 60 * 60 * 1000; 
+const countdown1Time = new Date().getTime() + 6 * 60 * 60 * 1000;
+const countdown2Time = new Date().getTime() + 12 * 60 * 60 * 1000;
+const countdown3Time = new Date().getTime() + 24 * 60 * 60 * 1000;
 
 startCountdown("countdown1", countdown1Time);
 startCountdown("countdown2", countdown2Time);
 startCountdown("countdown3", countdown3Time);
+
+// Mendapatkan tombol-tombol add to cart
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function () {
+        // Ambil informasi produk dari data atribut
+        const productId = this.getAttribute('data-id');
+        const productName = this.getAttribute('data-name');
+        const productPrice = parseInt(this.getAttribute('data-price'));
+
+        // Cek apakah keranjang sudah ada di localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Cek apakah produk sudah ada di keranjang
+        const existingProduct = cart.find(item => item.id === productId);
+        if (existingProduct) {
+            // Jika sudah ada, tambah jumlahnya
+            existingProduct.quantity += 1;
+        } else {
+            // Jika belum ada, tambahkan produk baru
+            cart.push({
+                id: productId,
+                name: productName,
+                price: productPrice,
+                quantity: 1
+            });
+        }
+
+        // Simpan keranjang kembali ke localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Opsional: Tampilkan pesan atau update ikon cart
+        alert(`${productName} berhasil ditambahkan ke keranjang!`);
+    });
+});
+
+// Menampilkan jumlah produk dalam keranjang di ikon cart
+function updateCartIcon() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cart-count').textContent = cartCount;
+}
+
+// Update ikon cart setiap kali halaman dimuat
+window.onload = updateCartIcon;
+
+// Data produk yang memiliki harga
+const products = [{
+        name: "Celana Chino",
+        price: 40000,
+        image: "/assets/img/Celana Chino.jpg"
+    },
+    {
+        name: "Kaos Polos",
+        price: 60000,
+        image: "/assets/img/Kaos Polos.jpg"
+    },
+    {
+        name: "Jaket Denim",
+        price: 120000,
+        image: "/assets/img/Jaket Denim.jpg"
+    },
+    {
+        name: "Sepatu Boots",
+        price: 180000,
+        image: "/assets/img/Sepatu Boots.jpg"
+    },
+    {
+        name: "Celana Jeans",
+        price: 220000,
+        image: "/assets/img/Celana Jeans.jpg"
+    },
+    // Tambahkan produk lainnya
+];
+
+// Menampilkan produk berdasarkan harga yang dipilih
+function filterProducts() {
+    const selectedPriceRanges = Array.from(document.querySelectorAll('.price-filter:checked'))
+        .map(checkbox => checkbox.value.split('-').map(Number));
+
+    const filteredProducts = products.filter(product => {
+        return selectedPriceRanges.some(range => {
+            return product.price >= range[0] && product.price <= range[1];
+        });
+    });
+
+    // Tampilkan produk yang sudah difilter
+    displayProducts(filteredProducts);
+}
+
+// Menampilkan produk di halaman
+function displayProducts(products) {
+    const productContainer = document.getElementById('product-container');
+    productContainer.innerHTML = ''; // Bersihkan container produk
+
+    products.forEach(product => {
+        const productCard = `
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="${product.image}" class="card-img-top" alt="Product Image">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title mb-auto text-start">${product.name}</h5>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="price">Rp. ${product.price.toLocaleString()}</span>
+                            <i class="bi bi-plus-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        productContainer.innerHTML += productCard;
+    });
+}
+
+// Event listener untuk checkbox
+document.querySelectorAll('.price-filter').forEach(checkbox => {
+    checkbox.addEventListener('change', filterProducts);
+});
+
+// Menampilkan semua produk saat halaman pertama kali dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    displayProducts(products);
+});
